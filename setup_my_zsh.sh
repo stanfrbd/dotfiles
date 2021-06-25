@@ -4,22 +4,11 @@ cd
 sudo apt update
 sudo apt install -y zsh
 
-cat /etc/passwd | grep bash | cut -d ":" -f1 >> /tmp/tmp.txt
+cd
+rm .vimrc .zshrc 2>/dev/null
+chsh -s /bin/zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
+wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
 
-while read user
-do
-    if [ "$user" != "root" ]
-    then
-        su $user
-        cd
-        rm .vimrc .zshrc 2>/dev/null
-        chsh -s /bin/zsh $user
-        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-        wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
-        wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
-    fi
-done < /tmp/tmp.txt
-
-rm /tmp/tmp.txt
-
-echo "[>] $(tput setaf 2)Done. Launch zsh, leave and open the terminal again :)"
+echo "[>] $(tput setaf 2)zsh put as default shell for $(whoami). Launch zsh, leave and open the terminal again :)"
