@@ -8,18 +8,16 @@ cat /etc/passwd | grep bash | cut -d ":" -f1 >> /tmp/tmp.txt
 
 while read user
 do
-    if [ "$user" == "root" ]
+    if [ "$user" != "root" ]
     then
-        su
-    else
         su $user
-    fi
-    cd
-    rm .vimrc .zshrc 2>/dev/null
-    chsh -s /bin/zsh $user
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-    wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
-    wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
+        cd
+        rm .vimrc .zshrc 2>/dev/null
+        chsh -s /bin/zsh $user
+        git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+        wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
+        wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
+        zsh
 done < /tmp/tmp.txt
 
 rm /tmp/tmp.txt
