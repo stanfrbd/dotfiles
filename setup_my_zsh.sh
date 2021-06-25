@@ -3,7 +3,6 @@
 sudo apt update
 sudo apt install -y zsh
 
-sudo -s
 cat /etc/passwd | grep bash | cut -d ":" -f1 >> tmp.txt
 
 while read user
@@ -12,9 +11,18 @@ do
 done < tmp.txt
 
 rm tmp.txt
-exit
 
 cd ~
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
+
+https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
+
+cd -
+
+cd /root
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
