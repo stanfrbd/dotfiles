@@ -17,6 +17,7 @@ do
         git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
         wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
         wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
+    fi
 done < /tmp/tmp.txt
 
 rm /tmp/tmp.txt
