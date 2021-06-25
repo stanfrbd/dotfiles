@@ -2,9 +2,9 @@
 
 Instructions
 
-> `setup_my_zsh.sh` will install zsh as default shell for the current user.
+> `setup_my_zsh.sh` will setup my `.zshrc`, auto-suggestion extension and a minimalist `.vimrc` for the current user.
 
-* # Installation of `zsh` and kill the terminal
+* Installation of `zsh` and kill the terminal
 ```sh
 sudo apt update && sudo apt install -y zsh && chsh -s $(which zsh) && exit
 ```
