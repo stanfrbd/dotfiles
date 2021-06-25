@@ -6,7 +6,7 @@ sudo apt install -y zsh
 
 cd
 rm .vimrc .zshrc 2>/dev/null
-chsh -s /bin/zsh
+chsh -s $(which zsh)
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
 wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
