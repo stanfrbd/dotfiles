@@ -12,8 +12,6 @@ done < tmp.txt
 
 rm tmp.txt
 
-cd ~
-
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
