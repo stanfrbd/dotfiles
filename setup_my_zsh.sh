@@ -22,4 +22,4 @@ done < /tmp/tmp.txt
 
 rm /tmp/tmp.txt
 
-echo "[>] $(tput setaf 2)Done. Lauch zsh, leave and open the terminal again :)"
+echo "[>] $(tput setaf 2)Done. Launch zsh, leave and open the terminal again :)"
