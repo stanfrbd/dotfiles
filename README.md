@@ -7,7 +7,8 @@ Instructions
 ```sh
 # Installation of zsh
 sudo apt update && sudo apt install -y zsh && chsh -s $(which zsh)
-
+```
+```sh
 # Restart the terminal or the computer
 wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/setup_my_zsh.sh && chmod +x setup_my_zsh.sh && ./setup_my_zsh.sh
 ```
