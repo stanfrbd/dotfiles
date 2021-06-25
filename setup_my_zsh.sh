@@ -4,7 +4,7 @@ cd
 sudo apt update
 sudo apt install -y zsh
 
-cat /etc/passwd | grep bash | cut -d ":" -f1 >> tmp.txt
+cat /etc/passwd | grep bash | cut -d ":" -f1 >> /tmp/tmp.txt
 
 while read user
 do
@@ -15,8 +15,8 @@ do
     git clone https://github.com/zsh-users/zsh-autosuggestions ./.zsh/zsh-autosuggestions
     wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc .
     wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc .
-done < tmp.txt
+done < /tmp/tmp.txt
 
-rm tmp.txt
+rm /tmp/tmp.txt
 
 echo "[>] $(tput setaf 2)Done. Leave and open the terminal again :)"
