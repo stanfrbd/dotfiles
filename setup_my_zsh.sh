@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd
 sudo apt update
 sudo apt install -y zsh
 
@@ -7,7 +8,7 @@ cat /etc/passwd | grep bash | cut -d ":" -f1 >> tmp.txt
 
 while read user
 do
-    chsh -s /bin/zsh "$user"
+    sudo chsh -s /bin/zsh "$user"
 done < tmp.txt
 
 rm tmp.txt
@@ -16,17 +17,15 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ./.zsh/zsh-autosugges
 
 wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
 
-https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
+wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
 
-cd -
+sudo cd /root
 
-cd /root
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions ./.zsh/zsh-autosuggestions
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+sudo wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
 
-wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
-
-https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
+sudo wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
 
 cd -
 
