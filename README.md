@@ -2,7 +2,7 @@
 
 Instructions
 
-> This script will install zsh as default shell for the current user
+> `setup_my_zsh.sh` will install zsh as default shell for the current user.
 
 ```sh
 # Installation of zsh
