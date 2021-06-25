@@ -17,9 +17,8 @@ do
         git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
         wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.vimrc
         wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/.zshrc
-        zsh
 done < /tmp/tmp.txt
 
 rm /tmp/tmp.txt
 
-echo "[>] $(tput setaf 2)Done. Leave and open the terminal again :)"
+echo "[>] $(tput setaf 2)Done. Lauch zsh, leave and open the terminal again :)"
