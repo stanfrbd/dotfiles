@@ -10,7 +10,7 @@ sudo apt update && sudo apt install -y zsh && chsh -s $(which zsh) && exit
 ```
 * Installation of my `.zshrc`
 ```sh
-wget https://raw.githubusercontent.com/stanfrbd/dotfiles/main/setup_my_zsh.sh && chmod +x setup_my_zsh.sh && ./setup_my_zsh.sh
+wget --no-check-certificate https://raw.githubusercontent.com/stanfrbd/dotfiles/main/setup_my_zsh.sh && chmod +x setup_my_zsh.sh && ./setup_my_zsh.sh
 ```
 * Then reboot.
 
