@@ -90,8 +90,8 @@ if [ "$color_prompt" = yes ]; then
     RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
 
     # enable syntax-highlighting
-    if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
-        . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
+        . ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
         ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
         ZSH_HIGHLIGHT_STYLES[default]=none
         ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
@@ -199,14 +199,16 @@ if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
-# Aliases
-alias desk="cd $HOME/Desktop"
+# Alias Stan
+
+alias stan='cd ~'
 alias v="checkvim"
 
-# Auto-suggestions based on history in .zsh_history
+# Custom completion (like Kali Linux)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Functions
+# Fonctions Stan
+
 function mkcd() {
     mkdir $1 && cd $1
 }
@@ -231,7 +233,6 @@ function checkvim() {
     fi
 }
 
-# Assuming VS Code && Marp plugin are installed
 function notes() {
         mkdir "$1"
         cd "$1"
@@ -255,9 +256,11 @@ function notes() {
         wget -q "https://raw.githubusercontent.com/stanfrbd/A4-marp/main/a4-light.css"
         wget -q "https://raw.githubusercontent.com/stanfrbd/A4-marp/main/a4-dark.css"
         wget -q "https://raw.githubusercontent.com/stanfrbd/A4-marp/main/atom-one-dark.css"
-        code .
+        powershell.exe code .
         cd ..
 }
 
-export PATH="$PATH:$HOME/.local/bin/"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/"
+export PATH=$PATH:/home/stan/.local/bin/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+export PGDATA="$HOME/postgres_data"
+export PGHOST="/tmp"
