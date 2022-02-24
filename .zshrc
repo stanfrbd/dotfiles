@@ -262,7 +262,7 @@ function notes() {
         cd ..
 }
 
-export PATH=$PATH:/home/stan/.local/bin/
+export PATH=$PATH:$HOME/.local/bin/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
